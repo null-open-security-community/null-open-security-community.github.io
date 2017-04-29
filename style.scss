@@ -17,6 +17,8 @@ html {
   font-size: 100%;
 }
 
+
+
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
@@ -25,7 +27,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+/*  max-width: 740px; */
+  max-width: 800px;
   padding: 0 10px;
   width: 100%;
 }
@@ -282,7 +285,7 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
-
+/* Anant Edit */
 
 /* Pagination */
 .PageNavigation {
@@ -303,6 +306,28 @@ footer {
 .PageNavigation .prev {
   text-align: left;
 }
+
+.entry img {
+    display: block;
+    margin: 0 auto;
+}
+
+.pagination {
+    text-align: center;
+    padding: 10px;
+}
+.pagination a {
+  padding: 2px 10px;
+
+}
+.pagination em {
+  background-color: #446cb3;
+  border-radius: 5px;
+  padding: 2px 10px;
+  color: #fff;
+}
+
+/* Anant edit end */
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
