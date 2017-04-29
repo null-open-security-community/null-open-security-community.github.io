@@ -8,6 +8,8 @@ Written by: cr01nk
 
 Before you start reading this blog, i would like you to know that i like to be wrong because i believe that it is the only way i can correct myself. So if anything you feel is wrong, or is not addressed in its proper terms. Please leave comments below. Thanks
 
+<!--more-->
+
 Recently i have been working on a paper that was presented at Blackhat DC 2010 by a Dion Blazakis, in which he demonstrated technique that could be used in bypassing ASLR and DEP in software that provide JIT based capabilities in itself. For example in all browsers that have capability to use either Flash code which have its own intermediate language which is compiled once the flash is loaded into browser.
 
 JIT compiler works with loading intermediate language code into the IL compiler (in case of flash it is Flash.ocx) and then it would compile this to x86 based code in memory location with “r+x” permission on that paper. See Figure-1 shows the user level code that has been written by the developer and Figure-2 for what actually it turns out to be when JIT compiler has done optimization and all the other usual stuff that a compiler do.

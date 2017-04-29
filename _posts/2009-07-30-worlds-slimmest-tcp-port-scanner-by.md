@@ -6,6 +6,8 @@ title: World’s slimmest TCP port scanner – By @
 Ok, the name is a pun on Titan’s watch 😛 and is something that is an outcome of a really cool bash feature which I’ll be discussing. Bash provides a way to create a TCP connection or send UDP packets to a host on  a given port, the cool thing is that you don’t have to rely on other scripting languages or programs for creating sockets/network connections when writing a shell script. Using this feature one can write simple to complex network utilities/scripts (a sigh of relief for scriptters :-) if that is that a word ).
 NOTE: This is a bash provided feature(if it is compiled with –enable-net-redirections option) and has nothing to do with /dev Devices.
 
+<!--more-->
+
 Using these sockets/connections is as simple as accessing a file which is inline with the unix philosophy. All you need to do is to read/write to files of the form:
 
     /dev/<protocol>/<host>/<port>

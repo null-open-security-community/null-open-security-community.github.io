@@ -8,6 +8,8 @@ I have always been saying that “The best things in the world are for free ….
 
 Here is some free stuff from Microsoft (not joking 😀 ), but whether it will be best, Im doubtful. After Windows Defender which is a free Anti-Mal-ware from Microsoft, it is now coming up with a new single step security solution for Windows users, code named Morro. Morro is to succeed One Care, the paid version of Microsoft’s security offering.
 
+<!--more-->
+
 (Surprisingly not many people know about Windows Defender. One of the obvious reason is failure of Vista which has built in Windows Defender. And majority of people are using XP, who need to download Windows Defender, are still using third party A/V)
 
 As we are approaching the Beta Release of Morro I have some interesting doubts/points :

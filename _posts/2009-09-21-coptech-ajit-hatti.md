@@ -11,7 +11,9 @@ Introduction to CopTech :
 
 Pune Police along with Nasscom and Data Security Council of India (DSCI) on 30 June, established the Cop Tech forum to increase sharing of ideas & knowledge on cyber security between the Cops and the IT Industry. In presence of many CXO of reknowned IT Industry and top brass cops Commissioner of police Satya Pal Singh signed a memorandum of understanding (MoU) with Nasscom.
 
-< IT compnies see CopTech as a great business oportunity. Some how we didnt find any one from IBM who were there in last inaugural meet>
+<!--more-->
+
+< IT companies see CopTech as a great business oportunity. Some how we didnt find any one from IBM who were there in last inaugural meet>
 
 The Event :
 
