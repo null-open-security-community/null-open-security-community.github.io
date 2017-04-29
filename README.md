@@ -13,4 +13,6 @@ This is the official null.co.in blog. If you want to submit an article to be pub
 
 1. post markdown in _posts
 2. images in /images folder use link via `![name](/images/name.ext "alt-text")`
-3. gist embedd via `<script>` tag embedd code provided on gist website.
+3. gist embedd via `{% gist userid/uniqid %}` tag embedd code provided on gist website.
+4. add <!--more--> after first few lines to mark front page excerpt
+5. 
