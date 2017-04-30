@@ -22,12 +22,12 @@ For example, lets say you want to send a custom payload to a web server, you can
 
 You won’t get anything in return for obvious reasons(no read!). Now you’ll say what good can this be. Well, you can assign it a fd and read and write to that fd if your script is a network interactive one and expects some data in response.
 
-Example commands:
-# 15 is just random fd that I chose, you can choose any fd number you like.
+    Example commands:
+    # 15 is just random fd that I chose, you can choose any fd number you like.
 
-    $exec 15<> /dev/tcp/example.com/80
-    $echo -en “HEAD / HTTP/1.1\r\nhost: example.com\r\n\r\n” >&15
-    $cat <&15
+    $ exec 15<> /dev/tcp/example.com/80
+    $ echo -en “HEAD / HTTP/1.1\r\nhost: example.com\r\n\r\n” >&15
+    $ cat <&15
     HTTP/1.1 302 Found
     Date: Thu, 30 Jul 2009 21:56:37 GMT
     Server: Apache
