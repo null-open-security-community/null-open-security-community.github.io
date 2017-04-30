@@ -87,5 +87,5 @@ exclude:
   - README.md
   - CNAME
 
-paginate: 5
+paginate: 10
 excerpt_separator: <!--more-->
