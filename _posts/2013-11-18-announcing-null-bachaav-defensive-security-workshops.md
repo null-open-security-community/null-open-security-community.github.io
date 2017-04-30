@@ -7,6 +7,8 @@ Bachaav (meaning defence in Hindi) is a completely hands-on workshop with the cl
 
 Bachaav is different from a normal null meet in its focus and duration. The focus is on learning specific tools and techniques and the duration is about 5-6 hours of hands-on work.
 
+<!--more-->
+
 ## null Bachaav Basics
 
 * **null Bachaav events are invite only**

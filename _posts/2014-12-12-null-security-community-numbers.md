@@ -9,6 +9,8 @@ We didn’t ask for registration, take any attendance (beyond a cursory head cou
 
 What we didn’t really think about (atleast I didn’t) was that we would still be doing this with enthusiasm and passion 5 and 1/2 years after we started. It is quite natural to start thinking about the next level after gaining proficiency in doing security related events month after month.
 
+<!--more-->
+
 [@abh1sek](https://twitter.com/abh1sek) was kind enough to create [swachalit](https://null.co.in) for us. Since then we realised that there is a need to track our progress and the metrics will help us do exactly that!
 
 Numbers are a great way to see where have we reached from where we were. They offer an objective insight into how we are growing and hopefully we will be offering more of these in the coming months.
