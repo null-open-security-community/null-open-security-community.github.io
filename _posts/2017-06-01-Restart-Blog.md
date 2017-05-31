@@ -13,7 +13,7 @@ As sas3 mentions, “My first skiing lesson was *how to get up when you fall."
 
 Yes, we failed to make a good decision before; (evidence, defacement of null website ;))
 
-![defaced page](/images/null_april_fool_prank.png)
+[![defaced page](/images/null_april_fool_prank.png)](/null-april-fool-prank-by/)
 
 Openness and knowledge sharing being some of the core ideas behind null, having contributors to the null blogs with the old implementation (wordpress; dont ask) was a problem which can now be solved by just a git pull request :)
 
