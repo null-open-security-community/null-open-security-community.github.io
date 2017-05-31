@@ -7,7 +7,7 @@ null is India's largest open security community. Registered as a non-profit soci
 
 As sas3 mentions, “My first skiing lesson was *how to get up when you fall.*
 
-    The instructor felt compelled to explain: _Buddy, you're gonna fall. Many times. So until you become an expert skiier this is going to be one skill you'll need a lot. Even after that, I'll be damned if you don't fall once in a while ... unless you give up skiing of course and choose to fall in your frozen parking lot.”. 
+> The instructor felt compelled to explain: _Buddy, you're gonna fall. Many times. So until you become an expert skiier this is going to be one skill you'll need a lot. Even after that, I'll be damned if you don't fall once in a while ... unless you give up skiing of course and choose to fall in your frozen parking lot.”. 
 
 Yes, we failed to make a good decision before; (evidence, defacement of null website ;))
 
