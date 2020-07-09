@@ -1,0 +1,3 @@
+I"m<p>This write-up summarizes a workshop/humla conducted by <a href="http://swachalit.null.co.in/profile/411-ashfaq-ansari">Ashfaq Ansari</a> on the basics of various kinds of attacks available for exploiting the <strong>Windows Kernel</strong> as of this date. It describes and demonstrates some of the very common techniques to illustrate the impacts of bypassing Kernel security and how the same could be achieved by exploiting specific flaws in kernel mode components. A knowledge of basic buffer overflow exploits through user mode applications is a plus when understanding kernel exploitation and memory issues.</p>
+
+:ET

@@ -1,0 +1,602 @@
+I"�u<p>null is one of the most active security communities in India. There are multiple chapters spread across the world, we have grown significantly in the recent past and have now an international presence in Amsterdam, Singapore, Dubai and more places joining the horde.</p>
+
+<p>Today we are here to talk about 2018, what was 2018 for null as a community, what we did and what we achieved out of it.</p>
+
+<!--more-->
+
+<p>null community chapter statistics: <span class="underline">https://null.co.in/stats/2018</span></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entries</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Events</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <td>Meet</td>
+      <td>88 (Sessions: 330)</td>
+    </tr>
+    <tr>
+      <td>Humla</td>
+      <td>14 (Sessions: 18)</td>
+    </tr>
+    <tr>
+      <td>Workshop</td>
+      <td>6 (Sessions: 9)</td>
+    </tr>
+    <tr>
+      <td>Puliya</td>
+      <td>4 (Sessions: 4)</td>
+    </tr>
+    <tr>
+      <td>Bachaav</td>
+      <td>2 (Sessions: 2)</td>
+    </tr>
+    <tr>
+      <td>Pre-null-meet</td>
+      <td>0 (Sessions: 0)</td>
+    </tr>
+    <tr>
+      <td>Public Puliya</td>
+      <td>4 (Sessions: 5)</td>
+    </tr>
+    <tr>
+      <td>Public Bachaav</td>
+      <td>1 (Sessions: 1)</td>
+    </tr>
+    <tr>
+      <td>Participation</td>
+      <td>4101</td>
+    </tr>
+    <tr>
+      <td>Unique Speakers</td>
+      <td>245</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From our <a href="https://blog.null.co.in/first-official-null-meet/">humble beginnings in 2008</a> we have grown leap and bounds. However, numbers don’t do justice to what null has achieved, so this year we approached each and every chapter and asked them to outline what they did in 2018. Anything that they considered worth sharing is what they discussed and is outlined in the post. We have budding chapters like Ahmedabad and Bhopal where the majority of the attendees are students to mature chapters like Bangalore, Mumbai, Singapore, Dubai and more were mostly professionals’ venture. All of them have taken initiative beyond just organizing meetups to serve as a knowledge sharing community.</p>
+
+<p>This post will outline what null chapters have done over the entire year in 2018 and will be celebrating the joy of giving back.</p>
+
+<p>Here is what each of our chapters had to say about what they were up to (strictly in alphabetical order).</p>
+
+<h1 id="ahmedabad"><strong>Ahmedabad</strong></h1>
+
+<p>First of all, we would like to thank all the null core community members who have approved null Ahmedabad to establish it as a chapter. We consider this as our biggest achievement. We conducted our first puliya session this year. Within 11 months, 12 events were conducted out of which 11 were meets and 1 was public puliya session. Out of 46 sessions, 23 unique speakers presented. Apart from the regular events:</p>
+
+<ol>
+  <li>
+    <p>Jaimin Gohel and Bhashit Pandya conducted multiple CTF challenges post meetups.</p>
+  </li>
+  <li>
+    <p>We supported Defcon Dehradun conducting an online session.</p>
+  </li>
+  <li>
+    <p>Unique hands-on workshop on lock picking and hardware hacking was conducted by Namrata Brahmkshatriya and Ravi Rajput respectively.</p>
+  </li>
+  <li>
+    <p>null Ahmedabad also participated in Kaspersky CTF.</p>
+  </li>
+  <li>
+    <p>Starting from the handful of people, we reached 60 registration.</p>
+  </li>
+  <li>
+    <p>Few students and people from non-security background came up and presented like Sanjay Makwana, Parth Jankhariya, Chinmay Patel, Kuldeep Pandya, Bhuvan Gandhi, Vishal Patel and Manju Chufal.</p>
+  </li>
+  <li>
+    <p>It was an absolute privilege to have Amish Patadiya, Savan Ahmedabad for multiple meets and our 1st Puliya conducted by Kartik Lalan.</p>
+  </li>
+</ol>
+
+<p>It is all the joint efforts of the team and supporters. 2018 has been a year of learning but it is just the beginning. Cheers!</p>
+
+<h1 id="amsterdam"><strong>Amsterdam</strong></h1>
+
+<p><em>Amsterdam Chapter conducted a total of 4 MeetUps in 2018. A total of 114 attendees RSVP’d.</em></p>
+
+<p><em>In 2018, Amsterdam chapter conducted a successful experimental meetup “Horror Stories from the Hacker World”, where attendees were asked to share incidents where their mistakes resulted in almost catastrophic failures.</em></p>
+
+<p>Details can be found on <a href="https://www.meetup.com/null-The-Open-Security-Group/]">https://www.meetup.com/null-The-Open-Security-Group/</a></p>
+
+<h1 id="bangalore-null--owasp--g4h"><strong>Bangalore: null / OWASP / G4H</strong></h1>
+
+<p>This year null Bangalore Chapter organized 25 different events of which 12 were the regular meets, 10 were the null Humla Sessions, 1 Workshop, 1 Puliya Session and 1 Special null Meet on Digital Identity and Privacy, 1 Public Puliya session, all of these spanning across multiple venues with total of 1539 participants and 58 unique speakers.</p>
+
+<p>This year we also introduced a new session format of QUIZ into the regular null Meets. The Quiz Session was recently taken up during the Jan 2019 Winja Public Puliya Meet. The session turned out to be really interactive with the maximum audience participation as the questions asked during the Quiz Session sparked an interesting discussion on various topics in security such as SCADA, Malware Analysis, Application Security, IoT Security and other recent happenings in the Security Industry.</p>
+
+<ul>
+  <li>
+    <p>This year null Bangalore celebrated its 9th Anniversary. The event
+got one of the highest registrations for null Bangalore with
+<a href="https://null.co.in/events/474-bangalore-null-bangalore-meet-18-august-2018-null-owasp-g4h-monthly-meet/event_registrations"><span class="underline">164
+RSVPs</span></a>.</p>
+  </li>
+  <li>
+    <p>Also, this year null Bangalore happened to interact with Rob
+Taylor (OWASP Charlotte Chapter Lead) during the
+<a href="https://null.co.in/events/503-bangalore-null-bangalore-meet-17-november-2018-combined-monthly-null-g4h-owasp-meet"><span class="underline">November 2018 regular null
+Meet</span></a>
+as he shared his experience on running security communities, and
+how communities are helping Security as an industry to grow.</p>
+
+    <ul>
+      <li>Link:
+<span class="underline">https://twitter.com/nullblr/status/1063671869918740480</span></li>
+    </ul>
+  </li>
+  <li>
+    <p>We conduct “Networking Sessions” for participants where they get a
+chance and meet the expert or relatively expert in various
+security domains. This is one of the best sessions where we get
+more appreciation. Some of the remarkable Open
+<a href="https://null.co.in/events/537-bangalore-null-bangalore-meet-19-january-2019-combined-monthly-null-g4h-owasp-meet"><span class="underline">Q\&amp;A
+sessions</span></a>
+have been conducted by Akash &amp; Riyaz where several practical
+questions were answered.</p>
+  </li>
+  <li>
+    <p>Top 2 speakers from Bangalore in the 2018 top 5 speakers
+analytics:</p>
+
+    <ul>
+      <li>
+        <p>Top 2 Speakers for null from Bangalore: Riyaz Walikar and
+Mihir Shah</p>
+      </li>
+      <li>
+        <p>Link:
+<span class="underline">https://null.co.in/stats/2018</span></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>We had multiple champions who conducted CTFs during their
+sessions. This aided in better hands-on experience and clarified
+concepts for the participants. Some of the notable ones were
+<a href="https://null.co.in/profile/15166-bittu-kumar"><span class="underline">Bittu
+Kumar</span></a>
+(<a href="https://null.co.in/events/523-bangalore-null-bangalore-humla-05-january-2019-basics-of-xss"><span class="underline">XSS</span></a>),
+<a href="https://null.co.in/profile/10-riyaz-walikar"><span class="underline">Riyaz</span></a>
+(<a href="https://null.co.in/event_sessions/1876-second-order-sql-injection"><span class="underline">Second Order
+SQL</span></a>..)</p>
+  </li>
+  <li>
+    <p>Technology: We started the use of Docker containers for use and
+distribution of target practice setups, vulnerable apps, networks,
+etc.</p>
+  </li>
+  <li>
+    <p>Conference Collaborations: Rootconf 2018</p>
+
+    <ul>
+      <li>
+        <p>nullBlr collaborated with Rootconf 2018 as a community
+partner. As a result, various null chapter attendees and
+volunteers got an opportunity to experience the
+    conference.</p>
+
+        <ul>
+          <li><span class="underline">https://null.co.in/pages/2-supporting-events</span></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>null Winja session: As a part of collaborated with nullcon, we
+carried out a null-Winja meet up with a healthy line-up of women
+infosec speakers.</p>
+  </li>
+  <li>
+    <p>We added one new venue to our existing list of venues which is
+MoEngage, which makes it a total of 19 venues for null Blr.</p>
+  </li>
+  <li>
+    <p><a href="https://null.co.in/events/534-bangalore-null-bangalore-workshop-05-january-2019-introduction-to-machine-learning-and-deep-learning"><span class="underline">Machine Learning
+Series</span></a>:
+We collaborated with CloudSek to conduct a thorough machine
+learning series for null participants where they can attend and
+speak on various machine learning topics with a view of security
+and related applications. The first session was conducted in Jan,
+2019.</p>
+  </li>
+  <li>
+    <p>We had a unique hands-on session on
+<a href="https://null.co.in/events/508-bangalore-null-bangalore-humla-24-november-2018-firmware-reverse-engineering-and-exploitation"><span class="underline">Firmware
+analysis</span></a>
+by
+<a href="https://null.co.in/profile/3556-veerababu-mr-iot"><span class="underline">Veerbabu</span></a>
+and <a href="https://null.co.in/profile/15295-vaibhav-bedi"><span class="underline">Vaibhav
+Bedi</span></a> on
+24th November where participants got a chance work and fuzz
+various IoT firmware and understand practical implications of the
+attacks.</p>
+  </li>
+  <li>
+    <p>We organized monthly sessions by OWASP where OWASP members present
+an OWASP project in detail and discuss the security implications.</p>
+
+    <ul>
+      <li>Link:
+<span class="underline">https://null.co.in/event_sessions/2408-understanding-owasp-mobile-top-10-2016-m2-insecure-data-storage</span></li>
+    </ul>
+  </li>
+  <li>
+    <p>We had a couple of special talks on Car Hacking this year where
+the speakers discussed the anatomy of
+<a href="https://null.co.in/event_sessions/2114-canbus-car-hacking"><span class="underline">CanBus</span></a>
+and offensive car hacking techniques. These were delivered by
+<a href="https://null.co.in/profile/13458-kalathil-karthik"><span class="underline">Kalathil
+Kartik</span></a>
+and
+<a href="https://null.co.in/profile/9292-debojyoti"><span class="underline">Debjyoti</span></a>(<a href="https://null.co.in/event_sessions/2020-security-access-in-automobile"><span class="underline">Security
+Access in
+Automobile</span></a>).</p>
+  </li>
+</ul>
+
+<h1 id="bhopal"><strong>Bhopal</strong></h1>
+
+<p>This year null Bhopal
+<a href="https://null.co.in/stats/2018?chapter_id=10"><span class="underline">organized</span></a>
+9 meets, 1 Bachaav session, 1 Humla Session 2 Puliya Sessions. Out of
+these, 2 sessions were online sessions. We had 163 number of participants
+registered and RSVP’s in total (actual counts was generally more as
+people turn up directly at the venue).</p>
+
+<p>Besides the gathering, null Bhopal was busy in multiple other avenues
+such as:</p>
+
+<p>1. Members of null Bhopal
+(<a href="https://null.co.in/profile/5980-deepanshu-gajbhiye"><span class="underline">Deepanshu</span></a>
+and
+<a href="https://null.co.in/profile/5878-sahil-khan"><span class="underline">Sahil</span></a>)
+delivered a 2-day workshop on Linux and cyber security for 200
+participants at <a href="https://www.facebook.com/pg/csitdurg.in/photos/?tab=album&amp;album_id=1853963911312190"><span class="underline">CSIT
+Durg</span></a>
+and spread the word about null and information security in general.
+Also,
+<a href="https://null.co.in/profile/5739-saurabh"><span class="underline">Saurabh</span></a>
+delivered many workshops in various college across Bhopal including lnct
+group, Radharaman group of college and technocrats college Bhopal.</p>
+
+<p>2. Multiple members attended and participated in various conferences
+like nullcon, c0c0n, Bsides Delhi.</p>
+
+<p>3. Members from null Bhopal got internships with startups like Attify,
+<a href="https://www.slideshare.net/meghasahu14/presentations"><span class="underline">Infotek
+Solutions</span></a>,
+Faccia and more.</p>
+
+<p>4. One of the members Deepanshu was selected for
+<a href="https://gist.github.com/d78ui98/138c986dffc4d7a094e3ec1c63b545ba"><span class="underline">Google Summer of code
+2018</span></a>
+at Debian.</p>
+
+<p>He is also actively contributing in open source projects like
+<a href="https://github.com/rebootuser/LinEnum/pull/26"><span class="underline">LinEnum</span></a>,
+<a href="https://github.com/OWASP/SecurityShepherd/pull/442"><span class="underline">Owasp Security
+Shepherd</span></a>,
+<a href="https://github.com/rapid7/metasploit-framework/pulls?utf8=%E2%9C%93&amp;q=d78ui98"><span class="underline">Metasploit</span></a>
+and many more.</p>
+
+<p>5. Our female participants also got involved with other like-minded
+organizations like OWASP WIA, Infosec Girls and more and have delivered
+online sessions on topics like <a href="https://youtu.be/-ADbIcVcPE4"><span class="underline">IoT
+Hacking</span></a> (delivered by
+<a href="https://null.co.in/profile/8518-shreya-pohekar"><span class="underline">Shreya</span></a>)
+etc.</p>
+
+<p>6. We started <a href="https://null.co.in/event_sessions/2195-solving-the-derp-n-stink-ctf"><span class="underline">CTF solving
+sessions</span></a>
+as part of workshop and humla sessions where we take a CTF VM from
+Vulnhub and all participants work together to solve it.</p>
+
+<p>7. Students also participated in <a href="https://medium.com/@hacker.ascool/my-first-experience-at-c0c0n-xi-e4f80c73a978"><span class="underline">Cocon
+CTF</span></a>,
+DRDO CTF, Winja CTF and secured decent rank.</p>
+
+<p>8. Members also started actively participating in student events like
+Smart India hackathon, Bhopal Smart City Hackathon etc.</p>
+
+<p>9.
+<a href="https://null.co.in/profile/5739-saurabh"><span class="underline">Saurabh</span></a>
+published a research paper on advanced malware analysis in IEEE Research
+journal (ICACT-IEEE 2018)</p>
+
+<p>Overall we are happy to say that this year we have seen an uptick in
+interest in information security in students, as well as our members,
+have started propagating awareness also. So overall 2018 was a good year
+for us and we aim to outclass ourselves next year.</p>
+
+<h1 id="chandigarh-nullowasp"><strong>Chandigarh: NULL/OWASP</strong></h1>
+
+<p>Chandigarh chapter was dormant till June 2018 due to unavailability of
+chapter leaders. We started again from July 2018 and organized 4 meetups
+including 1 null Bachaav, 3 monthly meetups. In total, we had around 30
+participants who were registered on null.co.in and RSVP’s in total were
+more because the actual count was more as people turned up directly at
+the venue. The event details are cross-posted on
+<a href="http://meetup.com/"><span class="underline">meetup.com</span></a> as it’s
+popular in the local community and we keep getting multiple
+participants via that also.</p>
+
+<p>To make chapter active and running last year we had two new Leaders
+onboard (<a href="https://null.co.in/profile/13125-pankaj-mouriya"><span class="underline">Pankaj
+Mouriya</span></a> and
+<a href="https://null.co.in/profile/14343-shubham-gupta"><span class="underline">Shubham
+Gupta</span></a>).</p>
+
+<p>Besides meets additional activities conducted by the chapter are listed
+below:</p>
+
+<ol>
+  <li>
+    <p>Let there be fresh blood: An initiative led by
+<a href="https://null.co.in/profile/5918-vibhor-mahajan"><span class="underline">Vibhor
+Mahajan</span></a> to
+activate the dormant chapter and bring in more fresh hands.
+Students who are eager to share their knowledge were made aware of
+the null community and what we do in meetups.</p>
+  </li>
+  <li>
+    <p>Mission Secure Chandigarh: Started by
+<a href="https://null.co.in/profile/7-sas3"><span class="underline">sas3</span></a>
+our previous chapter leader. This is an initiative to educate
+people on how to create a safe application by spreading knowledge
+and awareness about secure coding practices. Also, it spreads
+awareness about information security in general.</p>
+  </li>
+</ol>
+
+<p>We are aiming more events and regular meetups this year @2019.</p>
+
+<h1 id="chennai"><strong>Chennai</strong></h1>
+
+<p>null - Chennai Chapter had 12 meetups in 2018. One of our speakers
+<a href="https://null.co.in/profile/1488-vengatesh"><span class="underline">Vengatesh</span></a>
+has delivered the highest number of talks across chapters. Vengat’s
+sessions were hands-on in nature and he proactively provided attendees
+with prerequisites which helped in smooth functioning of sessions and
+people gained a better understanding. Special mentions:
+<a href="https://null.co.in/profile/6508-bhaskar"><span class="underline">Bhaskar</span></a>
+despite personal issues made time for presenting topics which are of
+immense technical depth.</p>
+
+<h1 id="delhi"><strong>Delhi</strong></h1>
+
+<p>null Delhi chapter organized 8 meetups, 1 humla and 1 bachaav session in</p>
+<ol>
+  <li>null Delhi chapter saw participation from attendees of various
+backgrounds and nearby regions throughout the year. The meetups happened
+in collaboration with <span class="underline">OWASP Delhi.</span></li>
+</ol>
+
+<p>Some of the notable chapter activities in 2018 are listed below:</p>
+
+<ul>
+  <li>
+    <p>There were 686 participants in 2018 who RSVP’d for our events.</p>
+  </li>
+  <li>
+    <p>null Delhi chapter had 23 unique speakers who presented at the
+chapter events.</p>
+  </li>
+  <li>
+    <p>null Delhi chapter hosted talks and workshops on a wide range of
+topics both in the areas of offense and defense some of which
+included (but not limited to) <a href="https://swachalit.null.co.in/event_sessions/2340-getting-started-with-threat-hunting"><span class="underline">Threat
+Hunting</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2339-notable-apt-activities-of-2018-and-their-analysis"><span class="underline">APTs</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2221-introduction-to-windows-kernel-exploitation"><span class="underline">Windows Kernel
+Exploitation</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2222-bugbounty-methodology-the-rules-and-the-how-to"><span class="underline">Bug
+Bounties</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2147-cors-vulnerabilities"><span class="underline">Web Application
+Vulnerabilities</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2009-ios-reverse-engineering"><span class="underline">Mobile
+Security</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/1816-getting-started-with-containers"><span class="underline">Containers</span></a>,
+<a href="https://swachalit.null.co.in/event_sessions/2196-securing-aws-environments"><span class="underline">Cloud
+Security</span></a>,
+etc.</p>
+  </li>
+  <li>
+    <p>We continued to receive local support from organizations such as
+Airtel, ThoughtWorks, Sapient and Deloitte for allowing us to host
+various events.</p>
+  </li>
+</ul>
+
+<p>We recently introduced three new chapter leads,
+<a href="https://swachalit.null.co.in/profile/4909-ankit"><span class="underline">Ankit</span></a>,
+<a href="https://swachalit.null.co.in/profile/214-pratul"><span class="underline">Pratul</span></a>
+and
+<a href="https://swachalit.null.co.in/profile/2865-tushar-mendiratta"><span class="underline">Tushar</span></a>
+to lead the community efforts in Delhi region and host more hands-on
+workshops, awareness events and regular meetups in 2019.</p>
+
+<h1 id="dharamshala"><strong>Dharamshala</strong></h1>
+
+<p>This chapter was dormant in 2018.</p>
+
+<h1 id="dubai"><strong>Dubai</strong></h1>
+
+<p>This year null Chapter organized a total of 10 events totaling to 42
+sessions. 34 unique speakers delivered sessions across the year with the
+participation of ~35 people every meet. The participation in the meets
+including the speaker was very diverse, from first-timers to seasoned
+speakers, they all delivered on presentation with high-quality content.
+20 out of 34 speakers were speaking at our chapter for the first time.</p>
+
+<p>We associated with <a href="https://conference.hitb.org/hitbsecconf2018dxb/sponsors/"><span class="underline">HITB
+Dubai</span></a>
+this year. We had <a href="https://twitter.com/nullDubai/status/1067287071692328960"><span class="underline">6
+volunteers/leads</span></a>
+who worked tirelessly to make the event possible. We had 2 standees, 6
+T-shirts, 1 roll up banner, <a href="https://twitter.com/nullDubai/status/1067330035693088770"><span class="underline">Free
+stickers</span></a>
+designed by
+<a href="https://twitter.com/seidsonic"><span class="underline">Seid</span></a>. We
+set up a booth at the conference and spread awareness about null and
+null meets the likes of Dubai Government, Universities,
+<a href="https://twitter.com/nullDubai/status/1067684673097220098"><span class="underline">Students</span></a>
+and
+<a href="https://twitter.com/anandtiwarics/status/1067387819738390529"><span class="underline">professionals</span></a>.
+We also hosted a CTF challenge (sponsored by nullCon) to solve code
+review challenges and <a href="https://twitter.com/nullDubai/status/1067747295867883520"><span class="underline">awarded a
+winner</span></a>.
+All in all, it was a fun year with some very cool memories.</p>
+
+<p>Pictures are posted on our Twitter handle
+<span class="underline">@nullDubai.</span></p>
+
+<h1 id="hyderabad"><strong>Hyderabad</strong></h1>
+
+<p>null Hyderabad chapter has around 2000 members and we have organized 9
+meets and 3/1 Humla/Bachav in 2018, total registrations for the meet is
+-1554 and for Humla &amp; Bachav – 218.</p>
+
+<p>As a mature chapter, our target toward 2018 was “quality talks” and
+improve “communication” with null hyd members. We also improved core
+team strength and created a process for new volunteers. We have
+continuous support from giant companies like JPMC, Service Now, Thought
+works, EPAM, CA, ADP and many more. Hyderabad leader and core team made
+this all possible (mentions - Mahesh Bheema, Pavan, Shanthan.</p>
+
+<h1 id="kolkata"><strong>Kolkata</strong></h1>
+
+<p>This year null Kolkata organized 3 events, all 3 were meetup events and
+altogether 7 sessions were conducted. Most liked sessions were
+‘<a href="https://null.co.in/event_sessions/1888-basics-of-windows-privilege-escalation"><span class="underline">Windows Privilege
+Escalation</span></a>’
+and ‘<a href="https://null.co.in/event_sessions/1593-defeating-aslr-stack-canary-for-fun-n-profit"><span class="underline">Reverse
+Engineering</span></a>’.</p>
+
+<h1 id="mumbai"><strong>Mumbai</strong></h1>
+
+<p>As our community is growing bigger day by day, being an open security
+community we are trying to maintain the quality of content high along
+with passing a sense of responsibilities to the participants to
+contribute back to the community.</p>
+
+<p>We have hosted a total 20 Event (63 Sessions) this year which includes 12
+Open monthly meets, 2 Humla hands-on sessions, 3 Puliya session and 3
+security workshops.</p>
+
+<p>We witnessed diverse participation from industry professionals, academic
+institutes, government agencies and independent consultants. We have
+also witnessed the participation from corporates for providing the venue
+and required resources for hosting the open security meets and hands-on
+session. Few of the companies even went ahead and mandated the
+participation of our community for their employees to gain the knowledge
+as well as giving back the knowledge.</p>
+
+<p>This year we attempted to bridge the skills gaps which industry is
+facing by introducing industry professionals to our community and at the
+same time by introducing the college students to such professionals for
+an internship or full-time opportunities. We have many student
+participants which got an internship or got permanently placed at
+reputed organizations.</p>
+
+<p>We tried covering the diverse security topics this year including
+<a href="https://null.co.in/events/524-mumbai-null-mumbai-public-puliya-15-december-2018-python"><span class="underline">Python
+Programming</span></a>,
+ICS Security, IOT security, Machine Learning,
+<a href="https://null.co.in/events/538-mumbai-null-mumbai-public-puliya-19-january-2019-reversing-with-gdb"><span class="underline">Reverse
+Engineering,</span></a>
+Buffer overflow, <a href="https://null.co.in/events/531-mumbai-null-mumbai-workshop-22-december-2018-static-malware-analysis-and-memory-forensics"><span class="underline">Malware
+Analysis</span></a>,
+<a href="https://null.co.in/event_sessions/2233-exploring-types-of-nt-s-make-your-own-wi-fi-nt-s"><span class="underline">WiFi Antenna making and frequency
+analysis</span></a>,
+<a href="https://null.co.in/events/441-mumbai-null-mumbai-public-puliya-28-april-2018-solving-vulnerable-machines-from-vulnhub-hackthebox"><span class="underline">Crowdsourced CTF
+solving</span></a>,
+<a href="https://null.co.in/events/533-mumbai-null-mumbai-humla-23-february-2019-custom-shellcoding"><span class="underline">writing custom
+shellcodes</span></a>,
+etc.</p>
+
+<p>null Mumbai was also community partner for the security
+<a href="https://www.csimumbai.org/cyberfifc-19/"><span class="underline">conference</span></a>
+organized by Computer Society of India and Cyber Maharashtra (Project
+under Maharashtra Government).</p>
+
+<h1 id="pune"><strong>Pune</strong></h1>
+
+<p>This was a good year for null Pune. We conducted 10 events in 2018 (8
+meets and 2 workshops). We had a total of ~400 RSVPs (we really had
+some outstanding turnouts with 45+ people some days) and an average 3
+sessions per meet. A mix of students and professionals attend and
+present in Pune. We even mentor some students from the first year of
+college. We did some great sessions with a variety of topics including
+<a href="https://null.co.in/event_sessions/1817-blockchain-technology"><span class="underline">blockchain</span></a>,
+<a href="https://null.co.in/event_sessions/1863-setting-up-hardware-pen-testing-lab-for-cheap"><span class="underline">hardware/IoT</span></a>,
+<a href="https://null.co.in/event_sessions/1957-using-sat-solvers-in-puzzles"><span class="underline">maths</span></a>,
+<a href="https://null.co.in/event_sessions/2236-common-crypto-failures"><span class="underline">crypto</span></a>,
+<a href="https://null.co.in/event_sessions/2355-owning-the-cognition-of-machine-learning-apps"><span class="underline">machine
+learning</span></a>,
+<a href="https://null.co.in/event_sessions/2299-bypassing-edge-security-policies"><span class="underline">browser
+security</span></a>
+and <a href="https://null.co.in/event_sessions/2298-introduction-to-reverse-engineering-with-radare2"><span class="underline">reverse
+engineering</span></a>.
+We also had talks specific to people getting into or preparing for certs
+like
+<a href="https://null.co.in/event_sessions/1865-oscp-101"><span class="underline">OSCP</span></a>/<a href="https://null.co.in/event_sessions/2183-basic-2-advanced-shellcode-techniques"><span class="underline">OSCE</span></a>
+where attendees learned from the experiences of speakers. Similar to the
+Bangalore chapter we had a WINJA meet in the first week of January 2019
+which had a great turnout, interactive quizzes and CTF. Looking into the
+next year we plan on having multiple Puliya sessions based on the
+response from the community and CTFs to correlate with sessions.</p>
+
+<h1 id="singapore"><strong>Singapore</strong></h1>
+
+<p>null Singapore Chapter is currently the largest security community in
+Singapore with over 1600 members. We have organized 4 meetup and 3
+workshop events in 2018. At null Singapore, we have interesting
+participation from members with a wide range of expertise including
+developers, pentest, hardware security, crypto experts, product
+security, network security operations, and more. We are pleased to host
+null community booths in well-known conferences here such as Blackhat
+and HITBGSEC and spread the awareness about our activities.</p>
+
+<p>We have amazing support from the local companies in Singapore to host
+our event. In 2018, most of our events were hosted at Grab, Zendesk, and
+Cloudflare.</p>
+
+<p>Raghunath G
+(<a href="https://null.co.in/profile/135-raghu"><span class="underline">https://null.co.in/profile/135-raghu</span></a>,
+<a href="https://twitter.com/raghunath24"><span class="underline">https://twitter.com/raghunath24</span></a>)
+joined null Singapore core team.</p>
+
+<h1 id="way-forward"><strong>Way Forward</strong></h1>
+
+<p>It’s inspiring to see how all these chapters have been working
+tirelessly towards the propagation of knowledge and bringing awareness
+about information security at grassroots. Each chapter has done
+something different to connect with the local community. The testament
+to the efforts in the event archive page which is arguably one of the
+largest information security archives with base in India:
+<a href="https://null.co.in/event_sessions"><span class="underline">https://null.co.in/event_sessions</span></a>.
+One can pick any topic under the sun on information security and can
+hopefully find at least one session that was delivered at a null chapter.</p>
+
+<p>The way forward for the community is to keep surpassing our own
+achievements and reach new heights, there are hundreds of unexplored
+possibilities and scenarios which will only be possible when people join
+hands. So this blog post should also be considered as a request to step
+forward and suggest what more we can do to help the world be a better
+place.</p>
+
+<p>Please reach out to your respective chapter leaders or the null
+community managers for any feedback.</p>
+
+<p>In case, your local region does not have a chapter and you want to start
+a new chapter to promote infosec learning, <a href="https://null.co.in/pages/3-how-to-start-a-chapter">visit this page</a>.</p>
+
+<p>Happy Learning</p>
+:ET

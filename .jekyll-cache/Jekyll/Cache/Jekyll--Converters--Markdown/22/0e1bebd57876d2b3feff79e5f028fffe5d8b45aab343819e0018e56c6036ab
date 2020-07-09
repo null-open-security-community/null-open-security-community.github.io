@@ -1,0 +1,88 @@
+I"|<p>Welcome to our 0x01st contest. Let your grey cells do the thinking/talking :-). Participate by submitting content on security and get a chance to win the ultra-cool, 100% Indian null hacker t-shirts.Winning (and other cool) submissions will also be published on null’s website. The best of the lot will also be considered for the upcoming security conference * nullcon.</p>
+
+<!--more-->
+
+<h3 id="the-prize-teaser">The Prize teaser</h3>
+
+<p><img src="/images/tshirt.jpg" alt="null T-Shirt" title="null T-Shirt" /></p>
+
+<h2 id="the-rules-of-engagement">The rules of engagement:</h2>
+
+<ol>
+  <li>
+    <p>The contest starts on 15th June 2009 and ends on 15th July 2009. Winners will be announced on the null mailing list on 20th July 2009.</p>
+  </li>
+  <li>
+    <p>The submissions can be anything related to security/hacking.</p>
+  </li>
+  <li>Submission Categories expected(but not limited to):
+    <ul>
+      <li>L2-L4 security/hacking.</li>
+      <li>Web 2.0 vulnerabilites and countermeasures.</li>
+      <li>.NET Malware/security.</li>
+      <li>Code injection (Binary/XSS/SQL/Command etc).</li>
+      <li>Spam mitigation and antispam evasion techniques.</li>
+      <li>Malware detection and antimalware evasion techniques.</li>
+      <li>Protocol vulnerabilities.</li>
+      <li>Voip.</li>
+      <li>Mobile networks GSM/CDMA/3G.</li>
+      <li>Wireless.</li>
+      <li>Cryptography.</li>
+      <li>OS/Kernel and Virtualization security/hacking.</li>
+      <li>Bluetooth.</li>
+      <li>Hardware based security/hacking.</li>
+      <li>Cyber Forensics.</li>
+      <li>Cyber Warfare.</li>
+      <li>Social Engineering.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Research work in Progress will also be accepted.</p>
+  </li>
+  <li>The submissions can be in the form of:
+    <ul>
+      <li>White papers.</li>
+      <li>Advisories/Disclosures.</li>
+      <li>Best Practices.</li>
+      <li>Video/Audio Demos.</li>
+      <li>Tutorials.</li>
+      <li>Hacks, tricks &amp; tweaks.</li>
+      <li>PoCs.</li>
+      <li>Source code/Tools.</li>
+    </ul>
+  </li>
+  <li>
+    <p>The submission should be original work of the author/submitter.</p>
+  </li>
+  <li>
+    <p>Your submissions* should be emailed to (submit <em>at</em> null.co.in).</p>
+  </li>
+  <li>
+    <p>It is ok to submit your work already published on the net like advisories already posted on FD/Bugtraq, paper presented at a conference etc.</p>
+  </li>
+  <li>Submissions will be judged by the core group members. Criteria for judgement:
+    <ul>
+      <li>More technical the submission, more chances it has for winning.</li>
+      <li>Innovation/Some thing new and never heard of before.</li>
+      <li>Age of the work. newer work will get more preference.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Many T-shirts/null credits to be given away, subject to no. of submissions received.</p>
+  </li>
+  <li>For any further queries/details please write to (dhiraj <em>at</em> null.co.in).</li>
+</ol>
+
+<h2 id="results">Results</h2>
+
+<p>And…. the lucky winners are:</p>
+
+<ul>
+  <li>Sumit Siddharth - Tool: sql Injection.</li>
+  <li>Simran - Paper: Bypassing url filtering in Dubai</li>
+  <li>Prakash - Disclosure: Directory index information disclosure in null website.</li>
+  <li>Raxit Seth - Disclosure: Information leakage in outllookindia.com website.</li>
+</ul>
+
+<p><strong>Disclaimer: By submitting your work to null you are giving null the right to publish and redistrubute it in any form.</strong></p>
+:ET
