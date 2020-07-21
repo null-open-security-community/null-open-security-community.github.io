@@ -26,7 +26,7 @@ Link to fill up the form is given below:
 
 [Click here to fill the form](https://docs.google.com/forms/d/1eP3KzhsDw5AMK9vGeWHcYyZvvDFOe28S7clKHoqwUGQ/edit)
 
-You can also copy the below URL and open in your browser to fill the form  
+You can also copy the below URL and paste it into your browser to fill the form  
 
 `https://docs.google.com/forms/d/1eP3KzhsDw5AMK9vGeWHcYyZvvDFOe28S7clKHoqwUGQ/edit`
 
