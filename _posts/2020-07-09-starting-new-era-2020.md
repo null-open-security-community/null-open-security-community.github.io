@@ -5,7 +5,7 @@ title: null 2.0 Starting of a New Era
 
 ### Recap: Going a step back
 
-null the open source community is starting with the new era by introducing the null 2.0. We would like to thank all the members and volunteers who made this possible. It won’t be wrong to call this community is volunteer-driven and this is essentially the strong essence of an open-source community. The idea of building such a community was to grow and learn together.
+null the open security community is starting with the new era by introducing the null 2.0. We would like to thank all the members and volunteers who made this possible. It won’t be wrong to call this community is volunteer-driven and this is essentially the strong essence of an open-security community. The idea of building such a community was to grow and learn together.
 
 <!--more-->
 
@@ -38,7 +38,7 @@ The idea behind starting null 2.0 was very clear, we wanted to make this communi
  
 * null jobs initiative was started in 2010 with an idea to facilitate employment in the area of information security. It has been breaking the barriers between the infosec enthusiasts seeking for new opportunity and HR. With the new era of null we will be introducing null Jobs 2.0.
 
-* null chapters all across the globe is the backbone of this open source community. Contributors in every chapter organise various kinds of activities like null monthly meetups, Humla, baachav sessions in order to exchange and share knowledge. With a new beginning, we would people from different places take initiative in order to start new chapters. A null chapter in every state of India is our dream is our goal. To energise initiative, a  newly proposed method to start the chapter in your city is planned. 
+* null chapters all across the globe is the backbone of this open security community. Contributors in every chapter organise various kinds of activities like null monthly meetups, Humla, baachav sessions in order to exchange and share knowledge. With a new beginning, we would people from different places take initiative in order to start new chapters. A null chapter in every state of India is our dream is our goal. To energise initiative, a  newly proposed method to start the chapter in your city is planned. 
 
 ## A Sincere Request:
 
