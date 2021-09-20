@@ -3,7 +3,7 @@ layout: post
 title: null Study Groups - Learning Security & Building Networks
 ---
 
-[null](https://null.community) is one of the most active, open security communities since 2010. One of the main objectives for null is spreading information security awareness. Keeping that aim in mind, null has started null Study Groups.</p>
+[null](https://null.community) is one of the most active, open security communities since 2010. One of the main objectives for null is spreading information security awareness. Keeping that aim in mind, null has started null Study Groups.
 
 ## About null Study Groups
 
@@ -31,8 +31,7 @@ We strictly adhere to a few pointers, that helps in keeping the quality of knowl
 
 * Basic decency with communication with others in the group.
 * Be consistent and show your involvement in the group. NO PASSIVE LEARNING.
-<br>More details can be found <a href="https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view" target="_blank" rel="noreferrer noopener">here</a>.</li></ul>
-
+<br>More details can be found <a href="https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view" target="_blank" rel="noreferrer noopener">here</a>.
 <p>During the period of six months, the study group's participants present their learning in the form of blog posts, labs, talks, etc. and moreover the people who are together in a group, build great connections among themselves by working together in the group and helping each other out.</p>
 
 ## What now?
