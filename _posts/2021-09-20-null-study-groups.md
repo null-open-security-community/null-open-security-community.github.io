@@ -13,7 +13,7 @@ null Study Group is a place where like-minded people get together and learn abou
 
 ### Past &amp; Present
 
-<p>The study group concept was first conceptualized and tested at null bhopal (by <a href="https://twitter.com/anantshri" target="_blank" rel="noreferrer noopener">@anantshri</a> ) at local level and based on those results it was decided that the effort should be taken at a bigger level and this is where we did our first round of study groups at null level in last 6 months.</p>
+<p>The study group concept was first conceptualized and tested at null bhopal (by <a href="https://twitter.com/anantshri">@anantshri</a>)  at local level and based on those results it was decided that the effort should be taken at a bigger level and this is where we did our first round of study groups at null level in last 6 months.</p>
 
 <p>In the past six months (Feb 2021 - August 2021) - we completed two study groups - web security and cloud security.</p>
 
@@ -28,10 +28,10 @@ null Study Group is a place where like-minded people get together and learn abou
 > Though the study groups have participants and mentors, but this not a hand holding kind of thing, the individual needs to be self-motivated and determined and ready to put in efforts on their own.
 
 We strictly adhere to a few pointers, that helps in keeping the quality of knowledge that is being passed in these groups, which are -
-
 * Basic decency with communication with others in the group.
 * Be consistent and show your involvement in the group. NO PASSIVE LEARNING.
-<br>More details can be found <a href="https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view" target="_blank" rel="noreferrer noopener">here</a>.
+<br>More details can be found [here](https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view).
+
 <p>During the period of six months, the study group's participants present their learning in the form of blog posts, labs, talks, etc. and moreover the people who are together in a group, build great connections among themselves by working together in the group and helping each other out.</p>
 
 ## What now?
@@ -47,12 +47,12 @@ We strictly adhere to a few pointers, that helps in keeping the quality of knowl
 
 <p>with some new rules in place, to improve the quality of the study groups.</p>
 
-<p>Read the detailed document here - <a href="https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view" target="_blank" rel="noreferrer noopener">https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view</a></p>
+<p>Read the detailed document here - <a href="https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view">https://drive.google.com/file/d/1nkCm_ucLrG2_tH2hn-uZvnHJgQjUSAJp/view</a></p>
 
 ## Call for Participation 
 
 <p>Form Link open till **2nd October, 2021** - <a href="https://forms.gle/AdeyKm8YXZSPu9Wh8"><strong>https://forms.gle/AdeyKm8YXZSPu9Wh8</strong></a></p>
 
-<p>For any suggestions or queries - Hit Me Up <a href="https://twitter.com/0xcardinal" target="_blank" rel="noreferrer noopener">@0xcardinal</a></p>
+<p>For any suggestions or queries - Hit Me Up <a href="https://twitter.com/0xcardinal">@0xcardinal</a></p>
 
 **Thank You!**
