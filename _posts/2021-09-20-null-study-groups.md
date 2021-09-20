@@ -52,7 +52,7 @@ title: null Study Groups: Learning Security & Building Networks
 
 ## Call for Participation 
 
-<p>Form Link - <a href="https://forms.gle/AdeyKm8YXZSPu9Wh8"><strong>https://forms.gle/AdeyKm8YXZSPu9Wh8</strong></a></p>
+<p>Form Link open till **2nd October, 2021** - <a href="https://forms.gle/AdeyKm8YXZSPu9Wh8"><strong>https://forms.gle/AdeyKm8YXZSPu9Wh8</strong></a></p>
 
 <p>For any suggestions or queries - Hit Me Up <a href="https://twitter.com/0xcardinal" target="_blank" rel="noreferrer noopener">@0xcardinal</a></p>
 
