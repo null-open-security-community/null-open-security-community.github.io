@@ -1,6 +1,7 @@
 ---
 layout: post
 title: null Study Groups Round 2 - Learning Security & Building Networks
+permalink: /null-study-groups-round-2/
 ---
 
 [null](https://null.community) is one of the most active, open security communities since 2010. One of the main objectives for null is spreading information security awareness. Keeping that aim in mind, null has started null Study Groups.
