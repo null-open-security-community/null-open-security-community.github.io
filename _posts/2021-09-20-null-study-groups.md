@@ -44,6 +44,7 @@ title: null Study Groups: Learning Security & Building Networks
 * Infrastructure Security
 * DevSecOps
 * IoT Security
+* Malware Analysis
 
 <p>with some new rules in place, to improve the quality of the study groups.</p>
 
